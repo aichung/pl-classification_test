@@ -184,8 +184,8 @@ class classification_test(ChrisApp):
         # ===============================================
         # Initialising variables
         # ===============================================
-	inputdir_data = '%s' % (options.inputdir)
-	outputfile = '%s/classification.csv' % (options.outputdir)
+	    inputdir_data = '%s' % (options.inputdir)
+        outputfile = '%s/classification.csv' % (options.outputdir)
 
         # ===============================================
         # Call code
@@ -195,7 +195,7 @@ class classification_test(ChrisApp):
         print("\n")
         print("\tCalling python code to perform vector rotations...")
         #rotate_matrix(str_rotation_matrix, str_vectors, out_str)
-	classification_random(inputdir_data, outputfile)
+        classification_random(inputdir_data, outputfile)
         print ("\tOutput will be in %s" % out_str)
         print("====================================================================================")
 
