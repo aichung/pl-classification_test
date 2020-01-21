@@ -18,6 +18,7 @@ import os
 import pdb
 import csv
 import random
+import numpy
 
 
 
@@ -29,7 +30,7 @@ def classification_random(datadir, outputdir):
     with open(outputfile, 'w') as resultsFile:
         writer = csv.writer(resultsFile)
 
-        for subject in np.sort(subj_strs):
+        for subject in numpy.sort(subj_strs):
 
             row = []
             row.append(subject)
