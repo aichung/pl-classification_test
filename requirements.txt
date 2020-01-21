@@ -1,5 +1,3 @@
 chrisapp
-pudb
+pdb
 numpy
-os
-csv
