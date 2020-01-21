@@ -18,7 +18,7 @@ def readme():
         return f.read()
 
 setup(
-      name             =   'cni_challenge_on_chris',
+      name             =   'classification_test',
       # for best practices make this version the same as the VERSION class variable
       # defined in your ChrisApp-derived Python class
       version          =   '0.1',
@@ -27,11 +27,11 @@ setup(
       author           =   'AWC',
       author_email     =   'aiwern.chung@childrens.harvard.edu',
       url              =   'http://wiki',
-      packages         =   ['cni_challenge_on_chris'],
+      packages         =   ['classification_test'],
       install_requires =   ['chrisapp', 'pudb'],
       test_suite       =   'nose.collector',
       tests_require    =   ['nose'],
-      scripts          =   ['cni_challenge_on_chris/cni_challenge_on_chris.py'],
+      scripts          =   ['classification_test/classification_test.py'],
       license          =   'MIT',
       zip_safe         =   False
      )
