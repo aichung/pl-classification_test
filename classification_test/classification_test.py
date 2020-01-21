@@ -28,7 +28,7 @@ sys.path.append(os.path.dirname(__file__))
 # import the Chris app superclass
 from chrisapp.base import ChrisApp
 # Import a python function that performs a matrix rotation
-from example_python.rotate import rotate_matrix
+from example_python.classification_test_code import  classification_random
 
 Gstr_title = """
 
@@ -53,11 +53,11 @@ where necessary.)
 
     NAME
 
-       cni_challenge_on_chris.py 
+       classification_test.py 
 
     SYNOPSIS
 
-        python cni_challenge_on_chris.py                                         \\
+        python classification_test.py                                         \\
             [-h] [--help]                                               \\
             [--json]                                                    \\
             [--man]                                                     \\
@@ -74,23 +74,23 @@ where necessary.)
           new vectors in a text file.
 
             mkdir inputdir outputdir && chmod 777 outputdir
-            python cni_challenge_on_chris.py inputdir outputdir
+            python classification_test.py inputdir outputdir
 
             N.B. Required files (rotation_matrices.txt and vectors.txt) should be in 'inputdir' as provided in 
-            pl-cni_challenge_on_chris github repository.
+            pl-classification_test github repository.
 
             Output will be in outputdir/classification.csv
 
     DESCRIPTION
 
-        `cni_challenge_on_chris.py` has been created in conjunction with the MICCAI CNI 2019 Challenge
+        `classification_test.py` has been created in conjunction with the MICCAI CNI 2019 Challenge
         http://www.brainconnectivity.net.
         
         This repo allows users to 
             1) convert their Challenge solution into a containerised Docker image;
             2) run their image on the Challenge hidden test data, on the ChRIS neuroimaging platform.
         
-        `cni_challenge_on_chris.py` contains currently contains a running python example.
+        `classification_test.py` contains currently contains a running python example.
 
     ARGS
 
@@ -124,7 +124,7 @@ where necessary.)
 """
 
 
-class cni_challenge_chris(ChrisApp):
+class classification_test(ChrisApp):
     """
     ChRIS plugin to create a Docker image to run on the CNI Challenge Test dataset.
     """
@@ -184,15 +184,8 @@ class cni_challenge_chris(ChrisApp):
         # ===============================================
         # Initialising variables
         # ===============================================
-        input_data_name = 'vectors.txt'                                     # Text file of vectors
-        input_rotation_mat_names = 'rotation_matrices.txt'                  # Text file of rotation matrices to apply on vectors
-        output_classification_name = 'classification.csv'                   # Output text file of rotated vectors
-        output_score_name = 'score.csv'                                     # Dummy output file
-
-        # Input and output files must be in 'inputdir' and 'outputdir', respectively.
-        str_rotation_matrix = '%s/%s' % (options.inputdir, input_rotation_mat_names)     # File containing rotation matrices
-        str_vectors = '%s/%s' % (options.inputdir, input_data_name)
-        out_str= '%s/%s' % (options.outputdir, output_classification_name)
+	inputdir_data = '%s' % (options.inputdir)
+	outputfile = '%s/classification.csv' % (options.outputdir)
 
         # ===============================================
         # Call code
@@ -201,7 +194,8 @@ class cni_challenge_chris(ChrisApp):
         # Call python module
         print("\n")
         print("\tCalling python code to perform vector rotations...")
-        rotate_matrix(str_rotation_matrix, str_vectors, out_str)
+        #rotate_matrix(str_rotation_matrix, str_vectors, out_str)
+	classification_random(inputdir_data, outputfile)
         print ("\tOutput will be in %s" % out_str)
         print("====================================================================================")
 
@@ -214,5 +208,5 @@ class cni_challenge_chris(ChrisApp):
 
 # ENTRYPOINT
 if __name__ == "__main__":
-    chris_app = cni_challenge_chris()
+    chris_app = classification_test()
     chris_app.launch()

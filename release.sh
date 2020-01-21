@@ -57,5 +57,5 @@ if [[ "$#" -eq 2 ]]; then
     echo Pushing $VER to PyPI ...
     rstcheck README.rst
     python3 setup.py sdist
-    twine upload dist/cni_challenge_on_chris-${VER}.tar.gz
+    twine upload dist/classification_test-${VER}.tar.gz
 fi

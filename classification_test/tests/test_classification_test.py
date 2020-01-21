@@ -1,15 +1,15 @@
 
 from unittest import TestCase
 from unittest import mock
-from cni_challenge_on_chris.cni_challenge_on_chris import cni_challenge_chris
+from classification_test.classification_test import classification_test
 
 
-class cni_challenge_chrisTests(TestCase):
+class classification_testTests(TestCase):
     """
     Test cni_challenge_chris.
     """
     def setUp(self):
-        self.app = cni_challenge_chris()
+        self.app = classification_test()
 
     def test_run(self):
         """

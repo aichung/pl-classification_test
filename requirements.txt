@@ -1,3 +1,6 @@
 chrisapp
 pudb
 numpy
+random
+os
+csv
