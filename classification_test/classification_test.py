@@ -65,6 +65,7 @@ where necessary.)
             [--savejson <DIR>]                                          \\
             [-v <level>] [--verbosity <level>]                          \\
             [--version]                                                 \\
+            [--dir]                                                     \\
             <inputDir>                                                  \\
             <outputDir> 
 
@@ -83,14 +84,7 @@ where necessary.)
 
     DESCRIPTION
 
-        `classification_test.py` has been created in conjunction with the MICCAI CNI 2019 Challenge
-        http://www.brainconnectivity.net.
-        
-        This repo allows users to 
-            1) convert their Challenge solution into a containerised Docker image;
-            2) run their image on the Challenge hidden test data, on the ChRIS neuroimaging platform.
-        
-        `classification_test.py` contains currently contains a running python example.
+        `classification_test.py` has been created as a test for plugins to run on CNI Challenge test data
 
     ARGS
 
@@ -99,6 +93,9 @@ where necessary.)
         
         <outputDir>
         Mandatory. A directory where output will be saved to. Must be universally writable to.
+
+        [--dir]
+        Optional. Path to input data folder 
 
         [-h] [--help]
         If specified, show help message and exit.
@@ -173,6 +170,9 @@ class classification_test(ChrisApp):
         self.add_argument('--rot', dest='rot', type=str, optional=False,
                           help='Type string: Name of file containing rotation matrix')
         """
+        self.add_argument('--dir', dest='data_folder', type=str, optional=True,
+                          help='Type string: path/folder to input data')
+
 
     def run(self, options):
         """
@@ -193,7 +193,7 @@ class classification_test(ChrisApp):
 
         # Call python module
         print("\n")
-        print("\tCalling python code to perform vector rotations...")
+        print("\tCalling python code to do some ranrandom task for testing...")
         #rotate_matrix(str_rotation_matrix, str_vectors, out_str)
         classification_random(inputdir_data, outputpath)
         print ("\tOutput will be in %s/classification.csv" % outputpath)
