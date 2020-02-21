@@ -170,7 +170,7 @@ class classification_test(ChrisApp):
         self.add_argument('--rot', dest='rot', type=str, optional=False,
                           help='Type string: Name of file containing rotation matrix')
         """
-        self.add_argument('--dir', dest='data_folder', type=str, optional=True,
+        self.add_argument('--dir', dest='dir', type=ChrisApp.path, optional=True,
                           help='Type string: path/folder to input data')
 
 
