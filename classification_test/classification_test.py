@@ -129,10 +129,10 @@ class classification_test(ChrisApp):
     SELFPATH                = os.path.dirname(os.path.abspath(__file__))
     SELFEXEC                = os.path.basename(__file__)
     EXECSHELL               = 'python3'
-    TITLE                   = 'ChRIS plugin to create a Docker image to run on the CNI Challenge Test dataset'
+    TITLE                   = 'ChRIS plugin test to create a Docker image to run on the CNI Challenge Test dataset'
     CATEGORY                = ''
     TYPE                    = 'ds'
-    DESCRIPTION             = 'ChRIS plugin to create a Docker image to run on the CNI Challenge Test dataset'
+    DESCRIPTION             = 'ChRIS plugin test to create a Docker image to run on the CNI Challenge Test dataset'
     DOCUMENTATION           = 'http://wiki'
     VERSION                 = '0.1'
     ICON                    = '' # url of an icon image
@@ -170,8 +170,21 @@ class classification_test(ChrisApp):
         self.add_argument('--rot', dest='rot', type=str, optional=False,
                           help='Type string: Name of file containing rotation matrix')
         """
-        self.add_argument('--dir', dest='dir', type=ChrisApp.path, optional=True,
-                          help='Type string: path/folder to input data')
+        #self.add_argument('--dir', dest='dir', type=ChrisApp.path, optional=True,
+        #                  help='path/folder to input data')
+
+
+
+        self.add_argument("-T", "--treePrint",
+                            help        = "Simple dirtree print. Specify head of target tree",
+                            type        = str,
+                            dest        = 'treePrint',
+                            optional    = True,
+                            default     = "")
+
+
+
+
 
 
     def run(self, options):
