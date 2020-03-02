@@ -94,9 +94,6 @@ where necessary.)
         <outputDir>
         Mandatory. A directory where output will be saved to. Must be universally writable to.
 
-        [--dir]
-        Optional. Path to input data folder 
-
         [-h] [--help]
         If specified, show help message and exit.
         
@@ -170,21 +167,6 @@ class classification_test(ChrisApp):
         self.add_argument('--rot', dest='rot', type=str, optional=False,
                           help='Type string: Name of file containing rotation matrix')
         """
-        #self.add_argument('--dir', dest='dir', type=ChrisApp.path, optional=True,
-        #                  help='path/folder to input data')
-
-
-
-        self.add_argument("-T", "--treePrint",
-                            help        = "Simple dirtree print. Specify head of target tree",
-                            type        = str,
-                            dest        = 'treePrint',
-                            optional    = True,
-                            default     = "")
-
-
-
-
 
 
     def run(self, options):
