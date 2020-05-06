@@ -24,7 +24,7 @@ import numpy
 
 def classification_random(datadir, outputdir):
 
-    subj_strs = os.listdir('%s/Test_Data/Test' % datadir)
+    subj_strs = os.listdir('%s/Test' % datadir)
     outputfile = '%s/classification.csv' % outputdir
 
     with open(outputfile, 'w') as resultsFile:
