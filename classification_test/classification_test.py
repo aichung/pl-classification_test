@@ -71,14 +71,14 @@ where necessary.)
 
     BRIEF EXAMPLE
 
-        * Bare bones execution of a python example to read in a vector file, perform a matrix rotation, and output the
-          new vectors in a text file.
+        * Black box execution of a python example to read in from a folder of CNI Challenge Test cases and 
+            output "prediction" labels in a text file for evaluation module.
+            
+            Top level folder name can be anything. Data and phenotypic data are in subdirectories 'Test' and
+            'SupportingInfo', respectively.
 
             mkdir inputdir outputdir && chmod 777 outputdir
             python classification_test.py inputdir outputdir
-
-            N.B. Required files (rotation_matrices.txt and vectors.txt) should be in 'inputdir' as provided in 
-            pl-classification_test github repository.
 
             Output will be in outputdir/classification.csv
 
